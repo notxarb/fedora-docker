@@ -1,8 +1,9 @@
 FROM fedora:33
 EXPOSE 8080
-RUN ls /var/lib
-RUN ls /var/lib/rpm
-RUN ls /var/lib/dnf
+RUN ls -lha /var/lib
+RUN ls -lha /var/lib/rpm
+RUN ls -lha /var/lib/dnf
+RUN whoami
 RUN dnf update -y
 RUN dnf install -y subversion-javahl
 RUN dnf install -y java-11-openjdk-devel
